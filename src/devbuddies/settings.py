@@ -31,14 +31,23 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
+    # pre-installed packages
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    # third party packages
+    'rest_framework',
+    'rest_framework.authtoken',
+    
+    # project applications
+    'users.apps.UsersConfig',
+    'fortesting.apps.FortestingConfig',
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -110,6 +119,9 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
+
+
+AUTH_USER_MODEL = 'users.User'
 
 
 # Static files (CSS, JavaScript, Images)
